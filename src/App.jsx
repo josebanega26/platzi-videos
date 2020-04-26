@@ -1,12 +1,12 @@
 import React from "react";
 import "../assets/styles/app.scss";
 import Layout from "../components/Layout/Layout";
-import Search from "../components/Search";
+import HomePage from "../containers/HomePage";
 
 function App() {
   return (
     <Layout>
-      <Search />
+      <HomePage />
     </Layout>
   );
 }
