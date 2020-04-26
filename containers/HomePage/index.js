@@ -24,17 +24,17 @@ function HomePage() {
   return (
     <div>
       <Search />
-      {videos.myList.length && (
+      {!!videos.myList.length && (
         <Categories tittle='Mi lista'>
           <Carousel items={videos.myList} />
         </Categories>
       )}
-      {videos.trends.length && (
+      {!!videos.trends.length && (
         <Categories tittle='Tendencias'>
           <Carousel items={videos.trends} />
         </Categories>
       )}
-      {videos.originals.length && (
+      {!!videos.originals.length && (
         <Categories tittle='Peliculas Originales'>
           <Carousel items={videos.originals} />
         </Categories>

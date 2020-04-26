@@ -1,5 +1,6 @@
 import React from 'react';
 import './Item.scss';
+import PropTypes from 'prop-types';
 import playIcon from '../../assets/images/play-icon.png';
 import plusIcon from '../../assets/images/plus-icon.png';
 
@@ -42,4 +43,7 @@ function Item({
   );
 }
 
+Item.protoTypes = {
+  title: PropTypes.string.isRequired,
+};
 export default Item;
