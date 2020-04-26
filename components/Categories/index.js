@@ -1,9 +1,10 @@
-import React from "react";
+import React from 'react';
+import './Categories.scss';
 
-function Categories({ children }) {
+function Categories({ children, tittle = 'insert Title' }) {
   return (
     <div className='categories'>
-      <h3 className='categories__title'>Mi lista</h3>
+      <h3 className='categories__title'>{tittle}</h3>
       {children}
     </div>
   );
