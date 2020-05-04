@@ -1,12 +1,10 @@
-import { combineReducers } from 'redux';
-import userReducer from './userReducer';
-
-// const reducer = combineReducers({
-//     user: userReducer,
-// });
-
 const reducer = (state, { type, payload }) => {
-  return state;
+  switch (type) {
+    case 'SET_FAVORITE':
+      return { ...state, myList: [...state.myList, payload] };
+    default:
+      return state;
+  }
 };
 
 export default reducer;

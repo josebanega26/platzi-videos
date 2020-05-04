@@ -3,18 +3,13 @@ import './Item.scss';
 import PropTypes from 'prop-types';
 import playIcon from '../../assets/images/play-icon.png';
 import plusIcon from '../../assets/images/plus-icon.png';
+import { setFavorite } from '../../src/redux/actions/index';
+import { connect } from 'react-redux';
 
-function Item({
-  title,
-  type,
-  language,
-  year,
-  contentRating,
-  duration,
-  cover,
-  description,
-  source,
-}) {
+function Item({ title, year, contentRating, duration, cover, setFavorite }) {
+  const handlerFavorite = () => {
+    setFavorite({ title, year, contentRating, duration, cover });
+  };
   return (
     <>
       <div className='carousel-item'>
@@ -30,6 +25,7 @@ function Item({
               className='carousel-item__details--img'
               src={plusIcon}
               alt='Plus Icon'
+              onClick={handlerFavorite}
             />
           </div>
           <p className='carousel-item__details--title'>{title}</p>
@@ -46,4 +42,8 @@ function Item({
 Item.protoTypes = {
   title: PropTypes.string.isRequired,
 };
-export default Item;
+
+const mapDispatchToProps = {
+  setFavorite,
+};
+export default connect(null, mapDispatchToProps)(Item);
