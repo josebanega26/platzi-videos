@@ -27,7 +27,7 @@ const HomePage = ({ myList = [], trends = [], originals = [] }) => {
       <Search />
       {!!myList.length && (
         <Categories tittle='Mi lista'>
-          <Carousel items={myList} />
+          <Carousel items={myList} isList />
         </Categories>
       )}
       {!!trends.length && (
